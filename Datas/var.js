@@ -8,7 +8,7 @@ export const ProjectMeta = Object.freeze({
     Last_Version: "v26.1.0.0",
     Title: "Dev-Wiki",
     Author: "Minty",
-    link: "https://minty-developer.github.com/Dev-Wiki"
+    link: "https://minty-developer.github.io/Dev-Wiki"
 });
 
 /*
