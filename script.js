@@ -2,6 +2,7 @@
 
 import * as Data from './Datas/WikiData.js';
 import * as Def from './Default/Default.js';
+import * as Vars from '../Datas/var.js';
 
 const searchInput = document.getElementById("Inp_Search");
 const searchBtn = document.getElementById("Btn_Search");
@@ -75,7 +76,7 @@ Def.S_R.addEventListener('click', ({ target }) => {
             console.log("찾은 위키 데이터:", clickedData);
 
             // 💡 [선택 1] 상세 페이지(Detail)로 이동하면서 ID를 전달하고 싶을 때 (Query String 사용)
-            location.href = `./Detail/Detail.html?id=${clickedData.id}`;
+            location.href = `${Vars.ProjectMeta.link}/Detail/Detail.html?id=${clickedData.id}`;
 
             // 💡 [선택 2] 다른 화면에서 쓰도록 로컬 스토리지에 임시 저장하고 싶을 때
             // localStorage.setItem("selectedWiki", JSON.stringify(clickedData));

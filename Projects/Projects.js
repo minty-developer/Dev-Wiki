@@ -19,7 +19,7 @@ function renderWikiList(dataArray) {
     const htmlTemplate = dataArray.map(item => {
         const tagsHtml = item.tags.map(tag => `<span class="tag">#${tag}</span>`).join('');
         return `
-        <a href='/Detail/Detail.html?id=p${item.id}'>
+        <a href='${Vars.ProjectMeta.link}/Detail/Detail.html?id=p${item.id}'>
             <article class="wiki-card" data-id="${item.id}">
                 <div class="card-header">
                     <span class="emoji">${item.emoji}</span>
