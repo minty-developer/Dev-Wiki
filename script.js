@@ -2,7 +2,7 @@
 
 import * as Data from './Datas/WikiData.js';
 import * as Def from './Default/Default.js';
-import * as Vars from '../Datas/var.js';
+import * as Vars from './Datas/var.js';
 
 const searchInput = document.getElementById("Inp_Search");
 const searchBtn = document.getElementById("Btn_Search");

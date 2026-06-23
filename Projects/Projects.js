@@ -1,4 +1,5 @@
 import { ProData } from "../Datas/projectData.js";
+import * as Vars from '../Datas/var.js';
 
 const wikiContainer = document.getElementById("Cards");
 const searchInput = document.getElementById('search-input');
