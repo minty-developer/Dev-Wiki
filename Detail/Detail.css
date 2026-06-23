@@ -1,0 +1,49 @@
+main {
+    padding: 10px;
+}
+
+/* 코드 블록 전체 감싸는 상자 */
+code-block {
+    display: block;
+    position: relative;
+    background-color: #1e1e1e; /* 어두운 배경 */
+    color: #d4d4d4;            /* 연한 회색 글자 */
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    padding: 40px 16px 16px 16px; /* 복사 버튼 공간 때문에 위쪽 패딩을 더 줌 */
+    border-radius: 8px;
+    margin: 16px 0;
+    white-space: pre;          /* 줄바꿈과 공백(들여쓰기)을 그대로 유지 */
+    overflow-x: auto;          /* 코드가 길어지면 가로 스크롤 생성 */
+    font-size: 14px;
+}
+
+/* 복사 버튼 스타일 */
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #333333;
+    color: #cccccc;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+/* 복사 성공했을 때 띄워줄 활성화 스타일 */
+.copy-btn.copied {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+img {
+    width: 100%;
+}

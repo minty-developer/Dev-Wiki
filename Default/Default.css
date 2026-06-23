@@ -1,0 +1,94 @@
+/* [---전체 설정---] */
+* {
+    box-sizing: border-box;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f7fa;
+    color: #333;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+}
+
+/* [---헤더---] */
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+}
+
+header h1 {
+    color: #f8fafc;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: color 0.2s ease;
+}
+
+header h1:hover {
+    cursor: pointer;
+    color: #38bdf8;
+}
+
+/* [---네비게이션 바---] */
+nav {
+    width: 100%;
+    height: 55px;
+    background-color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+nav button {
+    color: #94a3b8;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+nav button:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* [---메인 화면---] */
+main {
+    width: 100%;
+    height: calc(100% - 225px);
+    background-color: #f1f5f9;
+    overflow-y: auto;
+}
+
+/* [---푸터---] */
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+footer h3 {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 400;
+}

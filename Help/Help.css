@@ -1,0 +1,26 @@
+.text_Div {
+    width: 100%;
+    height: 100%;
+    gap: 80px;
+    padding: 10px;
+}
+
+.text_Div div {
+    width: 100%;
+}
+
+.text_Div div ul {
+    margin-left: 16px;
+}
+
+.text_Div div ul ul {
+    margin-left: 32px;
+}
+
+.textDiv div div h3 {
+    margin-left: 48px;
+}
+
+.text_Div div div p {
+    margin-left: 16px;
+}

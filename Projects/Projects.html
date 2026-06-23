@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Default/Default.css">
+    <link rel="stylesheet" href="./Projects.css">
+    <title>Help</title>
+</head>
+
+<body>
+    <header id="Hea">
+        <h1 id="H1_Title">Dev-Wiki</h1>
+    </header>
+    <nav id="Nav">
+        <button id="Btn_Project">Projects</button>
+        <button id="Btn_Sets">Sets</button>
+        <button id="Btn_Help">Help</button>
+    </nav>
+    <div class="filter-section">
+        <input type="text" id="search-input" placeholder="제목, 태그, 키워드 검색...">
+        
+        <div class="category-tabs">
+            <button class="category-btn active" data-category="All">전체</button>
+            <button class="category-btn" data-category="C/C++">C/C++</button>
+            <button class="category-btn" data-category="C#">C#</button>
+            <button class="category-btn" data-category="Java">Java</button>
+            <button class="category-btn" data-category="JavaScript">JS</button>
+            <button class="category-btn" data-category="HTML">HTML</button>
+            <button class="category-btn" data-category="Python">Py</button>
+            <button class="category-btn" data-category="Assebly">Asm</button>
+            <button class="category-btn" data-category="Hexa">Hex</button>
+        </div>
+    </div>
+    <main id="Cards">
+    </main>
+    <footer id="Foo">
+        <h3 id="H3_MadeBy"></h3>
+        <h3 id="H3_Version"></h3>
+    </footer>
+    <script type="module" src="../Default/Default.js"></script>
+    <script type="module" src="./Projects.js"></script>
+</body>
+
+</html>

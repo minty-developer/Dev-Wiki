@@ -1,0 +1,106 @@
+* {
+    text-decoration: none;
+    color: black;
+}
+
+/* 🟢 2. 필터 섹션 (높이를 고정하지 않고 자식 크기에 맞추게 변경) */
+.filter-section {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* input과 tabs 사이의 여백을 깔끔하게 조정 */
+}
+
+/* 검색창 */
+.filter-section input {
+    width: 100%; /* calc 안 쓰고 border-box 상태라 100% 주면 딱 맞음 */
+    height: 45px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding-left: 15px;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-section input:focus {
+    border: 2px solid #2563eb;
+}
+
+.filter-section input::placeholder {
+    color: #94a3b8;
+}
+
+/* 🟢 3. 카테고리 탭 영역 */
+.category-tabs {
+    display: flex;
+    gap: 8px; /* 버튼들 사이의 간격 추가 */
+    width: 100%;
+    padding: 8px 0; /* 높이를 고정하는 대신 패딩으로 여백 주기 */
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #fff;
+}
+
+/* 카테고리 버튼 */
+.category-tabs button {
+    width: 80px;
+    height: 36px; /* 탭 영역 안에서 예쁘게 정렬되도록 살짝 조절 */
+    background-color: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+/* 🟢 버튼 선택자 이름 통일 및 매칭 */
+.category-tabs button:hover {
+    background-color: #1d4ed8;
+}
+
+.category-tabs button:active {
+    background-color: #1e40af;
+}
+
+/* 🟢 4. 메인 콘텐츠 및 위키 카드 */
+main {
+    height: calc(100% - 392px);
+    overflow-y: auto;
+    padding: 0 20px; /* 카드 좌우 여백 확보 */
+}
+
+.wiki-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px; /* 카드와 카드 사이의 하단 여백 추가 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wiki-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-color: #2563eb;
+}
+
+.wiki-card h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.wiki-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+}
