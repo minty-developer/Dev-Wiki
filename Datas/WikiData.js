@@ -1,3 +1,5 @@
+import * as Vars from './Var.js';
+
 export const wikiData = [
     {
         "id": 1,
@@ -10,7 +12,7 @@ export const wikiData = [
         <br>
         <strong>여기서 잠깐! GCC를 왜 깔아야 하나요?</strong><br>
         사실 요즘은 GCC 깔기가 필수는 아닙니다.<br>
-        왜냐하면 요즘 프로그램들은 기본적으로 GCC를 대리고 다니기 때문이죠.<br>
+        왜냐하면 요즘 프로그램들은 기본적으로 GCC를 데리고 다니기 때문이죠.<br>
         하지만, GCC를 깔면 무려 <strong>Command Prompt</strong>에서 GCC를 쓸 수 있게 됩니다.<br>
         그러면 C언어를 컴퓨터 어디서든 컴파일 할 수 있게 되는 거죠.<br>
         그러면 서론은 여기까지로 하고, 바로 설치를 해 보도록 하겠습니다.<br>
@@ -109,5 +111,202 @@ export const wikiData = [
         "keywords": ["gcc", "지씨씨", "컴파일러", "Compiler"],
         "createdAt": "2026-06-23",
         "updatedAt": "2026-06-23"
-    }
+    },
+    {
+        "id": 3,
+        "title": "GCC 사용 방법",
+        "desc": "gcc를 터미널에서 사용하는 방법",
+        "text": `
+        <small><strong>주의! 이 문서는 Window 11 기준입니다.</strong></small><br>
+        <small><strong>또한 이 문서에 나오는 gcc 옵션들은 gcc 4.8부터 정상 인식하며,<br>-std=c++17은 gcc 7, -std=c++20은 gcc 10버전부터 지원됩니다.</strong></small><br><br>
+        GCC을 활성화 했으면 써야겠죠?<br>
+        이번엔 GCC 쓰는 방법을 간단하게 알아봅시다.<br>
+        <br>
+        우선 목차는 다음과 같습니다.<br>
+        <ol>
+            <a href='#--version'><li>--version</li></a>
+            <a href='#-o'><li>-o</li></a>
+            <a href='#-v'><li>-v</li></a>
+            <a href='#-E'><li>-E</li></a>
+            <a href='#-s'><li>-s</li></a>
+            <a href='#-c'><li>-c</li></a>
+            <a href='#-Wall'><li>-Wall</li></a>
+            <a href='#-Wextra'><li>-Wextra</li></a>
+            <a href='#-Werror'><li>-Werror</li></a>
+            <a href='#-w'><li>-w</li></a>
+            <a href='#-O0'><li>-O0</li></a>
+            <a href='#-O1'><li>-O1</li></a>
+            <a href='#-O2'><li>-O2</li></a>
+            <a href='#-O3'><li>-O3</li></a>
+            <a href='#-Os'><li>-Os</li></a>
+            <a href='#-Ofast'><li>-Ofast</li></a>
+            <a href='#-g'><li>-g</li></a>
+            <a href='#-pg'><li>-pg</li></a>
+            <a href='#-l'><li>-l</li></a>
+            <a href='#-L'><li>-L</li></a>
+            <a href='#-I'><li>-I</li></a>
+            <a href='#-static'><li>-static</li></a>
+            <a href='#-std'><li>-std</li></a>
+            <a href='#-D'><li>-D</li></a>
+            <a href='#-fPIC'><li>-fPIC</li></a>
+            <a href='#-m64'><li>-m64</li></a>
+            <a href='#-m32'><li>-m32</li></a>
+        </ol>
+        <br>
+        그럼 바로 가보도록 하죠.
+        <br>
+        <h2 id='--version'>--version</h2>
+        이 옵션은 <a href='${Vars.ProjectMeta.link}/Detail/Detail.html?id=w2'>GCC 설정</a>을 보고 오셨다면 익숙하실 텐데요, 다음과 같이 씁니다.
+        <code-block>gcc --version</code-block>
+        GCC의 현재 버전을 보여주고, 이걸 이용해서 GCC가 정상 작동한다는 것을 알 수 있죠.<br>
+        <br>
+        <h2 id='-o'>-o</h2>
+        이 옵션은 컴파일의 결과물의 이름을 지어주는 옵션입니다.
+        <code-block>gcc main.c -o Game.exe</code-block>
+        만약 이 옵션을 지정하지 않으면 'a.확장자'로 나오게 됩니다.<br>
+        <br>
+        <h2 id='-v'>-v</h2>
+        이 옵션은 컴파일 내용을 상세하게 출력합니다. (GCC의 버전도 확인할 수 있습니다.)
+        <code-block>gcc -v main.c</code-block>
+        <br>
+        <h2 id='-E'>-E</h2>
+        이 옵션은 컴파일의 정도를 제어하는데, 전처리기까지만 컴파일합니다.
+        <code-block>gcc -E main.c</code-block>
+        이 경우, 결과물의 확장자는 '.i'가 됩니다.<br>
+        <br>
+        <h2 id='-s'>-s</h2>
+        이 옵션 또한 컴파일의 정도를 제어하는데, 컴파일까지만 컴파일합니다.
+        <code-block>gcc -s main.c</code-block>
+        이 경우, 결과물의 확장자는 '.s'가 됩니다.<br>
+        <br>
+        <h2 id='-c'>-c</h2>
+        이 옵션도 컴파일의 정도를 제어하는데, 어셈블까지만 컴파일 합니다.
+        <code-block>gcc -c main.c</code-block>
+        이 경우, 결과물의 확장자는 '.o'가 됩니다.<br>
+        또한, 이 옵션을 붙이면 링크를 하지 않습니다.<br>
+        <br>
+        <h2 id='-Wall'>-Wall</h2>
+        이 옵션은 컴파일 중 경고를 찾으면 띄울 수 있게 하는데, 이 옵션을 넣고 컴파일 하는 것을 강력 추천합니다.
+        <code-block>gcc -Wall main.c</code-block>
+        이 옵션이 있으면 에러가 안 나는 프로그래밍의 오류를 쉽게 잡을 수 있습니다.<br>
+        <br>
+        <h2 id='-Wextra'>-Wextra</h2>
+        이 옵션은 컴파일 중 경고를 찾으면 띄울 수 있게 하는데, 이 옵션은 -Wall보다 더 세세하게 보여줍니다.
+        <code-block>gcc -Wextra main.c</code-block>
+        이 옵션은 보통 복잡한 프로그래밍을 할 때 가끔 켜긴 하지만 보통 -Wall로 대부분 잡히는 편입니다.<br>
+        <br>
+        <h2 id='-Werror'>-Werror</h2>
+        모든 경고를 에러로 취급하며, 경고가 하나라도 있으면 컴파일이 중단됩니다.
+        <code-block>gcc -Werror main.c</code-block>
+        매우 복잡한 코드나, 중요한 코드에서 쓰는 경우가 가끔 있습니다.<br>
+        <br>
+        <h2 id='-w'>-w</h2>
+        모든 경고를 표시하며, 매우 복잡한 프로그램을 짤 때 사용하지만 매우 많은 경고가 뜨기 때문에 경고의 요점을 찾기 힘들 수도 있습니다.
+        <code-block>gcc -w main.c</code-block>
+        <br>
+        <h2 id='-O0'>-O0</h2>
+        이 옵션은 컴파일의 최적화를 제어하며, 아무 최적화도 하지 않습니다. (-O_ 옵션을 빼면 기본값으로 적용됩니다.)
+        <code-block>gcc -O0 main.c</code-block>
+        <br>
+        <h2 id='-O1'>-O1</h2>
+        이 옵션 또한 컴파일의 최적화를 제어하며, 컴파일 속도를 크게 떨어트리지 않는 선에서 최적화를 시행합니다.
+        <code-block>gcc -O1 main.c</code-block>
+        <br>
+        <h2 id='-O2'>-O2</h2>
+        이 옵션도 컴파일의 최적화를 제어하며, 코드 크기를 늘리지 않는 선에서 거의 모든 최적화를 시행합니다.
+        <code-block>gcc -O2 main.c</code-block>
+        보통 배포용으로 많이 쓰입니다.<br>
+        <br>
+        <h2 id='-O3'>-O3</h2>
+        이 옵션도 컴파일의 최적화를 제어하며, 가장 강력한 최적화를 시행합니다.
+        <code-block>gcc -O3 main.c</code-block>
+        이 경우, 루프 전개를 사용하여 속도를 극대화 하지만, 파일 용량이 커질 수 있습니다.<br>
+        <br>
+        <h2 id='-Os'>-Os</h2>
+        이 옵션도 컴파일의 최적화를 제어하며, 파일 크기를 최소화하며 최적화를 시행합니다.
+        <code-block>gcc -Os main.c</code-block>
+        보통 임베디드 환경에서 주로 쓰입니다.<br>
+        <br>
+        <h2 id='-Ofast'>-Ofast</h2>
+        이 옵션도 컴파일의 최적화를 제어하며, -Os의 표준에 위배되는 빠른 연산(부동소수점의 수학 연산 등)까지 최적화 합니다.
+        <code-block>gcc -Ofast main.c</code-block>
+        <br>
+        <h2 id='-g'>-g</h2>
+        이 옵션은 디버깅 정보를 제어하며, 디버깅 정보를 포함해서 컴파일 합니다.
+        <code-block>gcc -g main.c</code-block>
+        이 경우, 에러가 난 소스코드의 위치를 볼 수 있습니다.<br>
+        <br>
+        <h2 id='-pg'>-pg</h2>
+        이 옵션도 디버깅 정보를 제어하며, 프로파일링 도구인 gprof를 위한 정보를 포함합니다.
+        <code-block>gcc -pg main.c</code-block>
+        이 경우, 어느 함수가 가장 시간을 많이 쓰는지 알아볼 수 있습니다.<br>
+        <br>
+        <h2 id='-l'>-l&lt;library&gt;</h2>
+        이 옵션은 라이브러리 및 링크를 제어하는 옵션입니다.<br>
+        링크할 라이브러리를 지정할 때 쓰이며, 사용방법은 아래와 같습니다.<br>
+        예) libmath.a를 링크하려는 경우
+        <code-block>gcc main.c -lmath</code-block>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^~~~~</p>
+        이름에서 lib과 확장자를 뺀 나머지를 입력합니다.<br>
+        <br>
+        <h2 id='-L'>-L&lt;dir&gt;</h2>
+        이 옵션도 라이브러리 및 링크를 제어하는 옵션이며 라이브러리를 찾을 디렉토리 경로를 추가 합니다.
+        <code-block>gcc main.c -L./libs</code-block>
+        <br>
+        <h2 id='-I'>-I&lt;dir&gt;</h2>
+        이 옵션도 라이브러리 및 링크를 제어하는 옵션이며, 헤더 파일을 찾을 포함 디렉토리 경로를 추가합니다.
+        <code-block>gcc -I./heads</code-block>
+        <br>
+        <h2 id='-static'>-static</h2>
+        이 옵션 또한 라이브러리 및 링크를 제어하는 옵션이며,<br>
+        공유 라이브러리가 아닌 정적 라이브러리를 강제로 결합하여 독립적인 실행파일을 만듭니다.<br>
+        <code-block>gcc main.c -static</code-block>
+        <br>
+        <h2 id='-std'>-std=</h2>
+        이 옵션은 언어 표준을 제어하는 옵션으로, 특정 C/C++ 표준 문법을 따르도록 강제합니다.
+        <code-block>gcc main.c -std=c99</code-block>
+        - C99 표준으로 컴파일
+        <code-block>gcc main.c -std=c11</code-block>
+        - C11 표준으로 컴파일
+        <code-block>gcc main.c -std=gnu11</code-block>
+        - GNU 확장 기능이 포함된 C11 표준으로 컴파일<br>
+        (C++의 경우 -std=c++14와 같은 형태로 입력 가능)
+        <br>
+        <h2 id='-D'>-D&lt;macro&gt;</h2>
+        소스 코드 내에 매크로를 외부에서 정의합니다.<br>
+        (#define과 같은 효과)
+        <code-block>gcc main.c -DDEBUG</code-block>
+        위로 인해 #ifdef 구문이 활성화 될 수 있습니다.<br>
+        <br>
+        <h2 id='-fPIC'>-fPIC</h2>
+        주로 리눅스에서 공유 라이브러리를 만들 때 사용하는 위치 독립코드 생성 옵션입니다.
+        <code-block>gcc -fPIC main.c</code-block>
+        <br>
+        <h2 id='-m64'>-m64</h2>
+        64비트 호환 코드로 컴파일합니다.
+        <code-block>gcc -m64 main.c</code-block>
+        <br>
+        <h2 id='-m32'>-m32</h2>
+        32비트 호환 코드로 컴파일 합니다.
+        <code-block>gcc -m32 main.c</code-block>
+        <br>
+        <br>
+        지금까지 gcc를 사용할 때 알아두면 좋은 옵션들을 알아봤습니다.
+        이외에도 gcc는 수없이 많은 옵션들을 가지고 있으니 궁금하시다면 아래 명령어를 CommandPrompt에 입력해 보세요
+        <code-block>gcc --help=common</code-block>
+        <code-block>gcc --help=optimizers</code-block>
+        <code-block>gcc --help=warnings</code-block>
+        <br>
+        그러면 여기까지입니다.<br>
+        감사합니다.<br>
+        <br>
+        <br>
+        `,
+        "emoji": "⚙️",
+        "category": "C/C++",
+        "tags": ["C", "C++", "GCC", "컴파일러", "환경변수"],
+        "keywords": ["gcc", "지씨씨", "컴파일러", "Compiler"],
+        "createdAt": "2026-06-24",
+        "updatedAt": "2026-06-24"
+    },
 ];

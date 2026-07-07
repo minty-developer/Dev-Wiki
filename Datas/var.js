@@ -4,11 +4,13 @@
 
 버전 정보, 앱 이름, 제작자 등
 */
+const Dev = true;
+
 export const ProjectMeta = Object.freeze({
     Last_Version: "v26.1.0.0",
     Title: "Dev-Wiki",
     Author: "Minty",
-    link: "https://minty-developer.github.io/Dev-Wiki"
+    link: Dev? "http://localhost:5500": "https://minty-developer.github.io/Dev-Wiki"
 });
 
 /*

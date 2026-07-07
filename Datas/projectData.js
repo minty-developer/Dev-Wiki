@@ -131,5 +131,24 @@ export const ProData = [
         "keywords": ["개발자"],  // 검색어 확장용 키워드
         "createdAt": "2026-06-23",                            // 작성일 (정렬용)
         "updatedAt": "2026-06-23"                             // 수정일
+    },
+    {
+        "id": 8,
+        "title": "Big5 Charactor Analyze",                       // 제목
+        "desc": "성격 검사",               // 미리보기 텍스트
+        // 실제 텍스트
+        "text": `
+        자신의 성격을 알아볼 수 있는 사이트입니다.
+        <br>
+        Links:<br>
+        <a href='https://minty-developer.github.io/Charactor_Analyze'>바로가기</a><br>
+        <a href='https://github.com/minty-developer/Charactor_Analyze/tree/main/README.md'>README보기</a><br>
+        `,
+        "emoji": "💻",                                      // 카드에 표시될 대표 이모지
+        "category": "HTML",                                 // 대분류 카테고리
+        "tags": ["성격", "검사"],    // 태그 섹션과 연동할 태그 배열
+        "keywords": ["성격"],  // 검색어 확장용 키워드
+        "createdAt": "2026-07-07",                            // 작성일 (정렬용)
+        "updatedAt": "2026-07-07"                             // 수정일
     }
 ]
